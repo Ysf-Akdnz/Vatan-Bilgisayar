@@ -1,14 +1,15 @@
 <template>
   <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
+    <div class="ysfysf" v-if="error.statusCode === 404">
+      <i class="fas fa-radiation fa-5x"></i>
+      <h1>
+        {{ pageNotFound }}
+      </h1>
+    </div>
     <h1 v-else>
       {{ otherError }}
     </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
+    <NuxtLink class="link" to="/"> Home page </NuxtLink>
   </v-app>
 </template>
 
@@ -18,27 +19,43 @@ export default {
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
-  data () {
+  data() {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
+      pageNotFound: 'Bu sayfa projeye dahil değildir...',
+      otherError: 'An error occurred',
     }
   },
-  head () {
+  head() {
     const title =
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError
     return {
-      title
+      title,
     }
-  }
+  },
 }
 </script>
 
 <style scoped>
-h1 {
-  font-size: 20px;
+.ysfysf {
+  margin: auto;
+  width: 50%;
+  border: 1px solid black;
+  padding: 10px;
+}
+.ysfysf h1{
+  display: inline;
+}
+.ysfysf i{
+  margin: auto;
+  display: inline;
+  color: rgb(255, 0, 0);
+}
+.link{
+  margin: auto;
+  width: 50%;
+  border: 1px solid black;
 }
 </style>

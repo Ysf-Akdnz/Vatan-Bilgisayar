@@ -10760,7 +10760,8 @@ button.swiper-pagination-bullet {
 }
 
 .icon-box-open:before {
-    content: "\e919"
+    font-family: "Font Awesome 5 Free";
+    content: "\f466"
 }
 
 .icon-box-shipping:before {

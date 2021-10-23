@@ -2,32 +2,33 @@
 export default {
   methods: {
     dropdown_open(event) {
-      const target = event.target.parentElement;
-      target.classList.add("open"); 
-      console.log(event);
-      console.log(target.classList)
+      const target = event.target.parentElement
+      target.classList.add('open')
     },
     dropdown_close(event) {
-      const target = event.target;
-      console.log("remove");
-      console.log(event);
-      console.log(target.classList)
-      target.classList.remove("open");
+      const target = event.target
+      target.classList.remove('open')
     },
     dropdown_open2(event) {
-      const target = event.target;
-      target.classList.add("open"); 
-      console.log(event);
-      console.log(target.classList)
+      const target = event.target
+      target.classList.add('open')
+      console.log('open')
     },
     dropdown_close2(event) {
-      const target = event.target;
-      console.log("remove");
-      console.log(event);
-      console.log(target.classList)
-      target.classList.remove("open");
-    }
-  }
+      const target = event.target
+      console.log('remove')
+      target.classList.remove('open')
+    },
+    dropdown_toggle(open) {
+      const target = event.target
+      if (open) {
+        target.parentElement.classList.add('open')
+      } else {
+        target.parentElement.classList.remove('open')
+      }
+      console.log('open')
+    },
+  },
   /* data() {
     return {
       dropdown_open : false
@@ -178,11 +179,11 @@ export default {
                   </div>
                 </div>
                 <div class="navbar-header__area">
-                  <div class="wrap-button" >
-                    <div class="btn-group my-account" 
-                      @mouseleave="dropdown_close2"
-                      @mouseenter="dropdown_open2">
+                  <div class="wrap-button">
+                    <div class="btn-group my-account">
                       <button
+                        @blur="dropdown_toggle(false)"
+                        @focus="dropdown_toggle(true)"
                         type="button"
                         id="btnMyAccount"
                         class="btn btn-primary btn-login dropdown-toggle"
@@ -193,7 +194,6 @@ export default {
                       >
                         <span><i class="fas fa-user"></i></span>
                         <span id="type">GİRİŞ YAP</span>
-                        
                       </button>
 
                       <ul class="dropdown-menu dropdown-menu-home login">
@@ -216,12 +216,16 @@ export default {
                       <i class="icon-search"></i>
                     </div>
 
-                    <div class="btn-group basketGroup">
+                    <div
+                      class="btn-group basketGroup"
+                      @mouseleave="dropdown_close2"
+                      @mouseenter="dropdown_open2"
+                    >
                       <button
                         type="button"
                         id="btnMyBasket"
                         class="btn btn-primary btn-basket dropdown-toggle"
-                        style="color : white"
+                        style="color: white"
                         aria-haspopup="true"
                         aria-expanded="false"
                       >
@@ -290,10 +294,17 @@ export default {
                     <span class="topbar-menu__text">YENİ</span>
                   </a>
                 </div>
-                <ul class="nav navbar-nav" >
-                  <li class="dropdown"  @mouseleave="dropdown_close"> <!-- Başaramadık -->
-                    <a class="nav-first-link" href="/cep-telefonu-modelleri/" @mouseover="dropdown_open">Telefon</a> <!-- Böyle oldu en fazla -->
-                    <div class="dropdown-menu" >
+                <ul class="nav navbar-nav">
+                  <li class="dropdown" @mouseleave="dropdown_close">
+                    <!-- Başaramadık -->
+                    <a
+                      class="nav-first-link"
+                      href="/cep-telefonu-modelleri/"
+                      @mouseover="dropdown_open"
+                      >Telefon</a
+                    >
+                    <!-- Böyle oldu en fazla -->
+                    <div class="dropdown-menu">
                       <div class="row">
                         <div class="menu-wrapper col-lg-9">
                           <ul class="dropdown-menu-list go-back-wrapper">
@@ -1049,7 +1060,12 @@ export default {
                     </div>
                   </li>
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <a class="nav-first-link" href="/bilgisayar/" @mouseover="dropdown_open">Bilgisayar</a>
+                    <a
+                      class="nav-first-link"
+                      href="/bilgisayar/"
+                      @mouseover="dropdown_open"
+                      >Bilgisayar</a
+                    >
                     <div class="dropdown-menu">
                       <div class="row">
                         <div class="menu-wrapper col-lg-12">
@@ -2133,7 +2149,10 @@ export default {
                     </div>
                   </li>
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <a class="nav-first-link" href="/tv-ev-elektronigi/" @mouseover="dropdown_open"
+                    <a
+                      class="nav-first-link"
+                      href="/tv-ev-elektronigi/"
+                      @mouseover="dropdown_open"
                       >Tv, Ev Elektroniği</a
                     >
                     <div class="dropdown-menu">
@@ -2402,7 +2421,11 @@ export default {
                     </div>
                   </li>
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <a class="nav-first-link" href="/bilgisayar-bilesenleri/" @mouseover="dropdown_open"> 
+                    <a
+                      class="nav-first-link"
+                      href="/bilgisayar-bilesenleri/"
+                      @mouseover="dropdown_open"
+                    >
                       Bilgisayar Parçaları
                     </a>
                     <div class="dropdown-menu">
@@ -3558,7 +3581,8 @@ export default {
                   <li class="dropdown" @mouseleave="dropdown_close">
                     <a
                       class="nav-first-link"
-                      href="/fotograf-makinesi-video-kamera" @mouseover="dropdown_open"
+                      href="/fotograf-makinesi-video-kamera"
+                      @mouseover="dropdown_open"
                     >
                       Foto, Kamera
                     </a>
@@ -3954,7 +3978,10 @@ export default {
                     </div>
                   </li>
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <a class="nav-first-link" href="/ofis-malzemeleri/" @mouseover="dropdown_open"
+                    <a
+                      class="nav-first-link"
+                      href="/ofis-malzemeleri/"
+                      @mouseover="dropdown_open"
                       >Ofis, Kırtasiye</a
                     >
                     <div class="dropdown-menu">
@@ -4190,7 +4217,12 @@ export default {
                     </div>
                   </li>
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <a class="nav-first-link" href="/aksesuarlar/" @mouseover="dropdown_open">Aksesuar</a>
+                    <a
+                      class="nav-first-link"
+                      href="/aksesuarlar/"
+                      @mouseover="dropdown_open"
+                      >Aksesuar</a
+                    >
                     <div class="dropdown-menu">
                       <div class="row">
                         <div class="menu-wrapper col-lg-9">
@@ -4503,7 +4535,12 @@ export default {
                     </div>
                   </li>
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <a class="nav-first-link" href="/oyun-hobi" @mouseover="dropdown_open">Oyun, Hobi</a>
+                    <a
+                      class="nav-first-link"
+                      href="/oyun-hobi"
+                      @mouseover="dropdown_open"
+                      >Oyun, Hobi</a
+                    >
                     <div class="dropdown-menu">
                       <div class="row">
                         <div class="menu-wrapper col-lg-9">
@@ -4730,7 +4767,10 @@ export default {
                     </div>
                   </li>
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <a class="nav-first-link" href="/elektrikli-ev-aletleri/" @mouseover="dropdown_open"
+                    <a
+                      class="nav-first-link"
+                      href="/elektrikli-ev-aletleri/"
+                      @mouseover="dropdown_open"
                       >Ev, Mutfak</a
                     >
                     <div class="dropdown-menu">
@@ -7177,7 +7217,10 @@ export default {
                     </div>
                   </li>
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <a class="nav-first-link" href="/kisisel-bakim-urunleri/" @mouseover="dropdown_open"
+                    <a
+                      class="nav-first-link"
+                      href="/kisisel-bakim-urunleri/"
+                      @mouseover="dropdown_open"
                       >Kişisel Bakım</a
                     >
                     <div class="dropdown-menu">
@@ -7349,7 +7392,10 @@ export default {
                     </div>
                   </li>
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <a class="nav-first-link" href="/spor-aletleri/" @mouseover="dropdown_open"
+                    <a
+                      class="nav-first-link"
+                      href="/spor-aletleri/"
+                      @mouseover="dropdown_open"
                       >Spor, Outdoor</a
                     >
                     <div class="dropdown-menu">
