@@ -1,7 +1,17 @@
 <template>
   <div > 
-    <PageCategories/>
+    <PageDealsOfDay/>
+    <PageCategories/> 
+    <PageLimitedStock/>
+    <PageBestSeller/>
+    <PageBestSellingBrands/>
+    
   </div>
+
+  
+  
+  
+  
   
   
     
