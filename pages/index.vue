@@ -1,7 +1,11 @@
 <template>
-  <div>
-  <PageMain/>
-  <PageCategories/>
+  <div > 
+    <PageDealsOfDay/>
+    <PageCategories/> 
+    <PageLimitedStock/>
+    <PageBestSeller/>
+    <PageBestSellingBrands/>
+    
   </div>
 </template>
 <script>
