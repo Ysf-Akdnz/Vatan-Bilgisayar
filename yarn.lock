@@ -6216,6 +6216,11 @@ jiti@^1.9.2:
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.12.7.tgz#745074d5a6f88c29152b32a99f4a2de23bd22a3f"
   integrity sha512-2v5iYsJp5l7iX6ettW/hD7A9qZtsib3gMBfxbQxASszzOpZ0dFZBZAUQGKKIQ780XGR3sGEp1L/8t1JyyPq5Fg==
 
+jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
+
 js-beautify@^1.6.12, js-beautify@^1.6.14:
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/js-beautify/-/js-beautify-1.14.0.tgz#2ce790c555d53ce1e3d7363227acf5dc69024c2d"

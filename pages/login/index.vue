@@ -1,3 +1,3 @@
 <template>
-    <PageLoginSignin/>
+    <page-account/>
 </template>
