@@ -1,5 +1,7 @@
 <template>
-  <div> BURASI ANA SAYFADIR</div>
+  <div > 
+    <PageCategories/>
+  </div>
   
   
     
