@@ -15,7 +15,7 @@
         </a>
         <div id="smallBannerHide" class="small-banner__button">
           <span class="small-banner__text">Gizle</span>
-          <span class="icon-times"></span>
+          <span class><i class="fas fa-times"></i></span>
         </div>
       </div>
     </div>
@@ -1049,7 +1049,7 @@
       <div class="text-center">
         <a href="/vitrin-urunler" class="btn-default btn-global mb-mrtop-0">
           <span>TÜM FIRSAT ÜRÜNLERİ</span>
-          <span class="icon-arrow-right"></span>
+          <span><i class="fas fa-arrow-right"></i></span>
         </a>
       </div>
     </div>

@@ -1815,7 +1815,7 @@
           class="btn btn-default btn-transparent btn-global mb-mrtop-0"
         >
           <span>TÜMÜNÜ GÖR</span>
-          <span class="icon-arrow-right"></span>
+          <span><i class="fas fa-arrow-right"></i></span>
         </a>
       </div>
     </div>

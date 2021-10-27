@@ -12,8 +12,8 @@
           <h3 class="global-component-header__title">En Çok Satanlar</h3>
         </div>
         <div class="classic-navigation">
-          <span class="top-button-prev"></span>
-          <span class="top-button-next"></span>
+          <span><i class="fas fa-chevron-left"></i></span>
+          <span><i class="fas fa-chevron-right"></i></span>
         </div>
         <div
           class="swiper-wrapper"

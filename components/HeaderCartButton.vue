@@ -14,7 +14,7 @@ export default {
 </script>
 <template>
   <div
-    class="btn-group basketGroup"
+    class="btn-group basketGroup "
     @mouseleave="dropdown_close2"
     @mouseenter="dropdown_open2"
   >

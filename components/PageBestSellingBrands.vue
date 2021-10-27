@@ -12,7 +12,7 @@
                 <a class="brand-list__link" href="/marka/sony"
                   ><img
                     class="brand-list__img lazy-init"
-                    src="/Upload/GENERAL/ter-ed-marka/sony.png"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/sony.png"
                   />
                 </a>
               </div>
@@ -22,7 +22,7 @@
                 <a class="brand-list__link" href="/marka/asus"
                   ><img
                     class="brand-list__img lazy-init"
-                    src="/Upload/GENERAL/ter-ed-marka/asus.png"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/asus.png"
                   />
                 </a>
               </div>
@@ -30,9 +30,10 @@
             <li class="brand-list__item">
               <div class="brand-list__object">
                 <a class="brand-list__link" href="/marka/apple">
-                  <i class="fab fa-apple"></i>
-                    
-                  
+                  <img
+                    class="brand-list__img lazy-init"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/apple.png"
+                  />
                 </a>
               </div>
             </li>
@@ -41,7 +42,7 @@
                 <a class="brand-list__link" href="/marka/samsung"
                   ><img
                     class="brand-list__img lazy-init"
-                    src="/Upload/GENERAL/ter-ed-marka/samsung.png"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/samsung.png"
                   />
                 </a>
               </div>
@@ -51,7 +52,7 @@
                 <a class="brand-list__link" href="/marka/huawei"
                   ><img
                     class="brand-list__img lazy-init"
-                    src="/Upload/GENERAL/ter-ed-marka/huawei.png"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/huawei.png"
                   />
                 </a>
               </div>
@@ -61,7 +62,7 @@
                 <a class="brand-list__link" href="/marka/hp"
                   ><img
                     class="brand-list__img lazy-init"
-                    src="/Upload/GENERAL/ter-ed-marka/hp.png"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/hp.png"
                   />
                 </a>
               </div>
@@ -71,7 +72,7 @@
                 <a class="brand-list__link" href="/marka/lenovo"
                   ><img
                     class="brand-list__img lazy-init"
-                    src="/Upload/GENERAL/ter-ed-marka/lenovo.png"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/lenovo.png"
                   />
                 </a>
               </div>
@@ -81,7 +82,7 @@
                 <a class="brand-list__link" href="/msi"
                   ><img
                     class="brand-list__img lazy-init"
-                    src="/Upload/GENERAL/ter-ed-marka/msi.png"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/msi.png"
                   />
                 </a>
               </div>
@@ -91,7 +92,7 @@
                 <a class="brand-list__link" href="/philips"
                   ><img
                     class="brand-list__img lazy-init"
-                    src="/Upload/GENERAL/ter-ed-marka/philips.png"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/philips.png"
                   />
                 </a>
               </div>
@@ -101,7 +102,7 @@
                 <a class="brand-list__link" href="/lg"
                   ><img
                     class="brand-list__img lazy-init"
-                    src="/Upload/GENERAL/ter-ed-marka/lg.png"
+                    src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/lg.png"
                   />
                 </a>
               </div>
