@@ -1,5 +1,5 @@
 <template>
     <div>
-        BURASI SEPETİMDİR
+        <sepetim/>
     </div>
 </template>

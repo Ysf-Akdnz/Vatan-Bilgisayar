@@ -1,4 +1,5 @@
 <template>
+<html lang="tr">
   <div>
     <page-header></page-header>
     <v-main>
@@ -8,7 +9,9 @@
     </v-main>
     <page-footer />
   </div>
+</html>
 </template>
+
 <script>
 import PageFooter from '~/components/PageFooter.vue'
 export default {

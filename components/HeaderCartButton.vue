@@ -41,7 +41,7 @@ export default {
         </div>
         <div class="text-center">
           <form
-            action="/Basket/ToFirstStep"
+            action="/Basket"
             class="loaderForm"
             method="post"
             role="form"

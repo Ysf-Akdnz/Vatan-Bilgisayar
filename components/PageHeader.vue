@@ -18,6 +18,7 @@ export default {
 }
 </script>
 <template>
+
   <header>
     <nav class="navbar navbar--inverse navbar-fixed-top">
       <div
