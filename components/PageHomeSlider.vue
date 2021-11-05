@@ -89,6 +89,7 @@ export default {
     return {
       swiperOption: {
         // sliderData: appData.HomePageSliderSource,
+        effect: 'cube',
         speed: 1500,
         autoplay: {
           delay: 3000,
