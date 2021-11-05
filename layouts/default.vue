@@ -1,13 +1,13 @@
 <template>
 <html lang="tr">
   <div>
-    <page-header></page-header>
+    <page-header v-if="$route.name!=='Basket'"></page-header>
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <page-footer />
+    <page-footer v-if="$route.name!=='Basket'" />
   </div>
 </html>
 </template>

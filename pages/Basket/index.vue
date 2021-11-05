@@ -1,5 +1,5 @@
 <template>
-    <div>
-        <sepetim/>
-    </div>
+  <div>
+    <sepetim />
+  </div>
 </template>

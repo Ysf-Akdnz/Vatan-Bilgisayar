@@ -15,7 +15,7 @@
         async=""
         src="https://www.googletagmanager.com/gtm.js?id=GTM-5RJ3235"
       ></script>
-      
+
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-title" content="Vatan Bilgisayar" />
       <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff" />
@@ -108,7 +108,10 @@
         sizes="192x192"
         href="https://www.vatanbilgisayar.com/assets/dist/images/pwa/logo_192_white.png"
       />
-      <link rel="stylesheet" href="https://www.vatanbilgisayar.com/assets/dist/css/app.css?v=10007957020904" />
+      <link
+        rel="stylesheet"
+        href="https://www.vatanbilgisayar.com/assets/dist/css/app.css?v=10007957020904"
+      />
 
       <script>
         var dataLayer = []
@@ -187,7 +190,7 @@
           type="hidden"
           value="6-gYHXhuaaCGEeeVPhcpJxQ_gwTTBx5vkfT-BqANqU9jfd2bBSwBBV9mtpBGubHa0Xp4rYJtrrAQCpWpd2eSlwkHSvI1"
         />
-      </form>     
+      </form>
       <script>
         dataLayer.push({ PageType: 'BasketPage' })
       </script>
@@ -211,6 +214,14 @@
           margin: 0;
         }
       </style>
+      <header class="basket-header sticky-header">
+        <a class="navbar-brand" href="/">
+          <img
+            src="https://www.vatanbilgisayar.com/assets/dist/images/vatanlogo.svg"
+            alt="Vatan Bilgisayar"
+          />
+        </a>
+      </header>
       <input type="hidden" name="basketCount" id="basketCount" value="1" />
       <main class="basket-main-area">
         <div class="basket">
@@ -220,7 +231,7 @@
                 <div class="col-xs-12">
                   <ul class="basket-process__inner">
                     <li class="active">
-                      <a href="/sepet/sepetim">
+                      <a href="/Basket">
                         <span class="basket-process__icon">
                           <i class="fas fa-shopping-cart"></i>
                         </span>
@@ -1148,7 +1159,8 @@
                               btn-arrow
                             "
                           >
-                            Sepeti Onayla <span><i class="fas fa-chevron-right"></i></span>
+                            Sepeti Onayla
+                            <span><i class="fas fa-chevron-right"></i></span>
                           </button>
                         </form>
                       </div>
@@ -1163,6 +1175,92 @@
               </div>
             </div>
           </div>
+          <footer class="footer">
+            <div class="courier courier-basket">
+              <div class="global-container">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                      <div class="courier-item">
+                        <div
+                          class="
+                            courier-item__wrapper courier-item__wrapper--first
+                          "
+                        >
+                          <span class="courier-item__img"
+                            ><i class="fas fa-box-open"></i>&nbsp;</span
+                          >
+                        </div>
+                        <div class="courier-item__wrapper">
+                          <h4 class="courier-item__title">YARIN TESLİM</h4>
+                          <p class="courier-item__content">
+                            Seçili ürünlere ertesi gün sahip olma fırsatı
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                      <div class="courier-item">
+                        <div
+                          class="
+                            courier-item__wrapper courier-item__wrapper--first
+                          "
+                        >
+                          <span class="courier-item__img"><i class="fas fa-people-carry"></i></span>
+                        </div>
+                        <div class="courier-item__wrapper">
+                          <h4 class="courier-item__title">BUGÜN TESLİM</h4>
+                          <p class="courier-item__content">
+                            Seçili ürünlere gün içerisinde sahip olma fırsatı.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                      <div class="courier-item">
+                        <div
+                          class="
+                            courier-item__wrapper courier-item__wrapper--first
+                          "
+                        >
+                          <span
+                            class="courier-item__img"
+                          ><i class="fas fa-truck-moving"></i></span>
+                        </div>
+                        <div class="courier-item__wrapper">
+                          <h4 class="courier-item__title" title="KARGO BEDAVA">
+                            KARGO BEDAVA
+                          </h4>
+                          <p class="courier-item__content">
+                            Seçili ürünlerde standart kargo bedava.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                      <div class="courier-item">
+                        <div
+                          class="
+                            courier-item__wrapper courier-item__wrapper--first
+                          "
+                        >
+                          <span class="courier-item__img"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                        <div class="courier-item__wrapper">
+                          <h4 class="courier-item__title" title="KOLAY İADE">
+                            KOLAY İADE
+                          </h4>
+                          <p class="courier-item__content">
+                            14 gün içerisinde cayma hakkı.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
         </div>
         <script>
           gtag('event', 'add_to_cart', {
@@ -1209,7 +1307,7 @@
       <script src="/Scripts/mfs-client.min.js"></script>
       <script src="/Scripts/mpass.js"></script>
       <script src="https://www.vatanbilgisayar.com/assets/dist/js/bundle.js?v=10007957020904"></script>
-      
+
       <div class="scroll-top" style="display: none; pointer-events: none">
         <span class="icon-arrow-up"></span>
       </div>
