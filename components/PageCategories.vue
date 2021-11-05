@@ -16,7 +16,7 @@
           </li>
           <li class="brand-list__item">
             <a href="/notebook/">
-              <span class=""><i class="icon-Laptop"></i></span>
+              <span class="">&nbsp;<i class="icon-Laptop"></i></span>
               Notebook
             </a>
           </li>

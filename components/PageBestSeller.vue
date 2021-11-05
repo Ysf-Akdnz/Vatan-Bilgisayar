@@ -2,6 +2,7 @@
   <div class="wrapper-product wrapper-product--light visilabs-best_seller">
     <div class="global-container">
       <div
+        v-swiper:mySwiper="swiperOption"
         class="
           five-carousel
           classic-carousel
@@ -12,8 +13,8 @@
           <h3 class="global-component-header__title">En Çok Satanlar</h3>
         </div>
         <div class="classic-navigation">
-          <span><i class="fas fa-chevron-left"></i></span>
-          <span><i class="fas fa-chevron-right"></i></span>
+          <span class="js-prev1"><i class="fas fa-chevron-left"></i></span>
+          <span class="js-next1"><i class="fas fa-chevron-right"></i></span>
         </div>
         <div
           class="swiper-wrapper"
@@ -413,56 +414,7 @@
             classic-pagination
             swiper-pagination-clickable swiper-pagination-bullets
           "
-        >
-          <span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 1"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 2"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 3"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 4"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 5"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 6"
-          ></span
-          ><span
-            class="swiper-pagination-bullet swiper-pagination-bullet-active"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 7"
-          ></span
-          ><span
-            class="swiper-pagination-bullet"
-            tabindex="0"
-            role="button"
-            aria-label="Go to slide 8"
-          ></span>
-        </div>
+        ></div>
         <span
           class="swiper-notification"
           aria-live="assertive"
@@ -472,3 +424,49 @@
     </div>
   </div>
 </template>
+<script>
+import { directive } from 'vue-awesome-swiper'
+
+// import style (<= Swiper 5.x)
+import 'swiper/css/swiper.css'
+export default {
+  directives: {
+    swiper: directive,
+  },
+  data() {
+    return {
+      swiperOption: {
+        slidesPerView: 5,
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+          el: '.classic-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.js-next1',
+          prevEl: '.js-prev1',
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 40,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+        },
+      },
+    }
+  },
+}
+</script>
