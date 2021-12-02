@@ -28,7 +28,7 @@
               </li>
               <li>
                 <a href="javascript:void(0)" class="bradcrumb-item"
-                  >MHDA3TU/A</a
+                  >{{get_product().code}}</a
                 >
               </li>
             </ul>
@@ -175,9 +175,7 @@
                               src="/assets/dist/images/placeHolder.gif"
                               title="iPhone&nbsp;11 64 Gb Siyah"
                               data-zoom-image="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155_large.jpg"
-                              srcset="
-                                https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155_large.jpg
-                              "
+                              :srcset="get_product().img_url"
                             />
                           </a>
                         </div>
@@ -403,100 +401,7 @@
                           />
                           <span>Apple Türkiye Garantili</span>
                         </a>
-                      </div>
-
-                      <div
-                        class="swiper-button-next"
-                        tabindex="0"
-                        role="button"
-                        aria-label="Next slide"
-                      ></div>
-                      <div
-                        class="swiper-button-prev"
-                        tabindex="0"
-                        role="button"
-                        aria-label="Previous slide"
-                      ></div>
-                      <div
-                        class="
-                          product-img-slide-pagination
-                          swiper-pagination-clickable swiper-pagination-bullets
-                        "
-                      >
-                        <div
-                          class="
-                            swiper-pagination-bullet
-                            swiper-pagination-bullet-active
-                          "
-                          tabindex="0"
-                          role="button"
-                          aria-label="Go to slide 1"
-                        >
-                          <img
-                            src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155_small.jpg"
-                          />
-                        </div>
-                        <div
-                          class="swiper-pagination-bullet"
-                          tabindex="0"
-                          role="button"
-                          aria-label="Go to slide 2"
-                        >
-                          <img
-                            src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155-1_small.jpg"
-                          />
-                        </div>
-                        <div
-                          class="swiper-pagination-bullet"
-                          tabindex="0"
-                          role="button"
-                          aria-label="Go to slide 3"
-                        >
-                          <img
-                            src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155-2_small.jpg"
-                          />
-                        </div>
-                        <div
-                          class="swiper-pagination-bullet"
-                          tabindex="0"
-                          role="button"
-                          aria-label="Go to slide 4"
-                        >
-                          <img
-                            src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155-3_small.jpg"
-                          />
-                        </div>
-                        <div
-                          class="swiper-pagination-bullet"
-                          tabindex="0"
-                          role="button"
-                          aria-label="Go to slide 5"
-                        >
-                          <img
-                            src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155-4_small.jpg"
-                          />
-                        </div>
-                        <div
-                          class="swiper-pagination-bullet"
-                          tabindex="0"
-                          role="button"
-                          aria-label="Go to slide 6"
-                        >
-                          <img
-                            src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155-5_small.jpg"
-                          />
-                        </div>
-                        <div
-                          class="swiper-pagination-bullet"
-                          tabindex="0"
-                          role="button"
-                          aria-label="Go to slide 7"
-                        >
-                          <img
-                            src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/vatan/kg.jpg"
-                          />
-                        </div>
-                      </div>
+                      </div>                
                       <span
                         class="swiper-notification"
                         aria-live="assertive"
@@ -504,45 +409,7 @@
                       ></span>
                     </div>
                   </div>
-                </div>
-                <div class="container-fluid wrapper-product-detail-info">
-                  <div class="row">
-                    <ul class="pdetail-property-list">
-                      <li data-count="0">
-                        <span class="property-head">Renk: </span>
-                        <span>SIYAH</span>
-                      </li>
-                      <li data-count="0">
-                        <span class="property-head">Cep Telefonu Modeli: </span>
-                        <span>iPhone 11</span>
-                      </li>
-                      <li data-count="0">
-                        <span class="property-head">Renk Grubu: </span>
-                        <span>Siyah</span>
-                      </li>
-                      <li data-count="0">
-                        <span class="property-head">Garanti: </span>
-                        <span>24</span>
-                      </li>
-                      <li data-count="0">
-                        <span class="property-head">Menşei: </span>
-                        <span>Çin</span>
-                      </li>
-                      <li data-count="0">
-                        <span class="property-head">Şebeke Frekansı: </span>
-                        <span>LTE (4G)</span>
-                      </li>
-                      <li data-count="0">
-                        <span class="property-head">Mobil Veri Hızı: </span>
-                        <span>4.5G Uyumlu</span>
-                      </li>
-                      <li data-count="0">
-                        <span class="property-head">İşlemci Hızı: </span>
-                        <span>2.65 GHz</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                </div>                
                 <ul
                   class="wrapper-product-tab-list hidden-xs hidden-sm hidden-md"
                 >
@@ -702,7 +569,7 @@
                           class="product-list__product-code pull-left"
                           data-productcode="MHDA3TU/A"
                         >
-                          MHDA3TU/A / 113155
+                          {{get_product().code}}
                         </div>
                       </div>
 
@@ -710,7 +577,7 @@
                         class="product-list__content product-detail-big-price"
                       >
                         <h1 class="product-list__product-name">
-                          iPhone&nbsp;11 64 Gb Siyah
+                          {{get_product().name}}
                         </h1>
 
                         <div
@@ -722,170 +589,11 @@
                               product-list__description-text
                             "
                           >
-                            <span
-                              id="Index_content1_lab_br4"
-                              style="
-                                color: #cc0a00;
-                                font-family: arial;
-                                font-size: 12px;
-                                font-weight: bold;
-                                width: 140px;
-                              "
-                              >Kutu içeriğinde kulaklık , şarj adaptörü
-                              bulunmamaktadır.</span
-                            ><br />
                           </h3>
-                          <span class="product-list__price">7.999</span>
-                          <span class="product-list__currency">TL</span>
+                          <span class="product-list__price">{{get_product().cost}}</span>
+                          <span class="product-list__currency">{{get_product().currency}}</span>
                         </div>
-                      </div>
-
-                      <div class="choose">
-                        <div class="choose__group">
-                          <span class="choose__text">Dahili Hafıza</span>
-                          <div class="choose__item" data-title="Dahili Hafıza">
-                            <a
-                              href="iphone-11-akilli-telefon.html"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid="113155"
-                              data-href="iphone-11-akilli-telefon.html"
-                              class="
-                                alternateButton
-                                btn btn-choose-option
-                                active
-                              "
-                              data-selected="true"
-                              data-value="64 GB"
-                              data-group="Dahili Hafıza"
-                              ><div>64 GB</div></a
-                            >
-                            <a
-                              href="javascript:void(0)"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid=""
-                              data-href=""
-                              class="
-                                alternateButton
-                                btn btn-choose-option
-                                closed
-                              "
-                              data-selected="false"
-                              data-value="128 GB"
-                              data-group="Dahili Hafıza"
-                              ><div>128 GB</div></a
-                            >
-                            <a
-                              href="iphone-11-256-gb-akilli-telefon-siyah-113149.html"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid="113149"
-                              data-href="iphone-11-256-gb-akilli-telefon-siyah-113149.html"
-                              class="
-                                alternateButton
-                                btn btn-choose-option
-                                closed
-                              "
-                              data-selected="false"
-                              data-value="256 GB"
-                              data-group="Dahili Hafıza"
-                              ><div>256 GB</div></a
-                            >
-                          </div>
-                        </div>
-                        <div class="choose__group">
-                          <span class="choose__text">Renk</span>
-                          <div class="choose__item" data-title="Renk">
-                            <a
-                              href="iphone-11-64-gb-akilli-telefon-beyaz.html"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid="113156"
-                              data-href="iphone-11-64-gb-akilli-telefon-beyaz.html"
-                              class="alternateButton btn btn-choose-option"
-                              data-selected="false"
-                              data-value="Beyaz"
-                              data-group="Renk"
-                              ><div>Beyaz</div></a
-                            >
-                            <a
-                              href="iphone-11-64-gb-akilli-telefon-kirmizi-113157.html"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid="113157"
-                              data-href="iphone-11-64-gb-akilli-telefon-kirmizi-113157.html"
-                              class="alternateButton btn btn-choose-option"
-                              data-selected="false"
-                              data-value="Kırmızı"
-                              data-group="Renk"
-                              ><div>Kırmızı</div></a
-                            >
-                            <a
-                              href="iphone-11-64-gb-akilli-telefon-mor-113159.html"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid="113159"
-                              data-href="iphone-11-64-gb-akilli-telefon-mor-113159.html"
-                              class="alternateButton btn btn-choose-option"
-                              data-selected="false"
-                              data-value="Mor"
-                              data-group="Renk"
-                              ><div>Mor</div></a
-                            >
-                            <a
-                              href="iphone-11-64-gb-akilli-telefon-sari-113158.html"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid="113158"
-                              data-href="iphone-11-64-gb-akilli-telefon-sari-113158.html"
-                              class="
-                                alternateButton
-                                btn btn-choose-option
-                                closed
-                              "
-                              data-selected="false"
-                              data-value="Sarı"
-                              data-group="Renk"
-                              ><div>Sarı</div></a
-                            >
-                            <a
-                              href="iphone-11-akilli-telefon.html"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid="113155"
-                              data-href="iphone-11-akilli-telefon.html"
-                              class="
-                                alternateButton
-                                btn btn-choose-option
-                                active
-                              "
-                              data-selected="true"
-                              data-value="SIYAH"
-                              data-group="Renk"
-                              ><div>SIYAH</div></a
-                            >
-                            <a
-                              href="javascript:void(0)"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid=""
-                              data-href=""
-                              class="
-                                alternateButton
-                                btn btn-choose-option
-                                closed
-                              "
-                              data-selected="false"
-                              data-value="Siyah"
-                              data-group="Renk"
-                              ><div>Siyah</div></a
-                            >
-                            <a
-                              href="iphone-11-64-gb-akilli-telefon-yesil-113160.html"
-                              data-url="/ProductDetail/DetailPagePartial"
-                              data-productid="113160"
-                              data-href="iphone-11-64-gb-akilli-telefon-yesil-113160.html"
-                              class="alternateButton btn btn-choose-option"
-                              data-selected="false"
-                              data-value="Yeşil"
-                              data-group="Renk"
-                              ><div>Yeşil</div></a
-                            >
-                          </div>
-                        </div>
-                      </div>
+                      </div>               
                       <div class="d-table hidden-xs">
                         <div class="d-cell product-button--cell">
                           <button
@@ -1477,3 +1185,25 @@
     </div>
   </div>
 </template>
+<script>
+import {mapGetters} from "vuex";
+
+export default {
+  data() {
+    return {
+      prd_code: this.$route.params.productCode 
+    }
+  },
+
+  computed: {
+    ...mapGetters({
+      get_productwithcode: "get_productwithcode"
+    }),
+  },
+  methods: {
+    get_product(){
+    return this.get_productwithcode(this.prd_code)
+    }
+  }
+}
+</script>

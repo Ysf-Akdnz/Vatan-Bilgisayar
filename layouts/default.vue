@@ -13,8 +13,12 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
 import PageFooter from '~/components/PageFooter.vue'
+
+
 export default {
+  
   components: { PageFooter },
   head: {
     script: [
@@ -141,6 +145,16 @@ export default {
       },
     ],
   },
+
+  created(){
+    this.fetchproducts();
+      },
+  
+  methods: {
+    ...mapActions({
+      fetchproducts: "fetchproducts"
+    }) 
+  }
 }
 </script>
 <style>
