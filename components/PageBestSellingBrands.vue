@@ -9,7 +9,7 @@
           <ul class="brand-list clearfix">
             <li class="brand-list__item">
               <div class="brand-list__object">
-                <a class="brand-list__link" href="/marka/sony"
+                <a class="brand-list__link" href="./_productCode"
                   ><img
                     class="brand-list__img lazy-init"
                     src="https://www.vatanbilgisayar.com/Upload/GENERAL/ter-ed-marka/sony.png"

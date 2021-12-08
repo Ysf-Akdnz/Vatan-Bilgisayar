@@ -17,7 +17,7 @@
           },
         }"
       >
-        <div v-for="item in 8" :key="item"  class="item" >
+        <div v-for="item in 8" :key="item" class="item">
           <div
             class="
               product-list product-list--second product-list--second__first-item
