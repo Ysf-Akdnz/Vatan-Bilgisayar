@@ -83,9 +83,7 @@
             "currency": "TL",
             "code": "MKQ63TU/A",
             "name": "Apple Watch SE GPS, 44mm Space Grey Aluminium Case with Midnight Sport Band"
-        }
-    ],
-    "products1": [
+        },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/addison/thumb/17953_small.jpg",
             "cost": 22,
@@ -141,11 +139,7 @@
             "currency": "TL",
             "code": "OB19B1/S",
             "name": "OPPO Band OB19B1 Akıllı Bileklik Siyah"
-        }
-    ],
-    
-    "products2":
-    [
+        },
         {
             "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/philips/thumb/philips-50pus8505-gorseli-108765_small.jpg",
             "cost":6999,
@@ -235,6 +229,5 @@
           
 
         }
-      
     ]
 }

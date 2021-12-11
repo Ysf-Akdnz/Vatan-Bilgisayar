@@ -102,7 +102,8 @@ export default {
   },
   methods: {
     getproducts(){
-      return this.get_products()
+      
+      return this.get_products().slice(0,12)
     }
   }
   

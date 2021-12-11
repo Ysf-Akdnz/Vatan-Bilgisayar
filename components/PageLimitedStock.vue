@@ -17,7 +17,7 @@
           },
         }"
       >
-        <div v-for="product in getproducts1()" :key="product.code" class="item" >
+        <div v-for="product in getproducts()" :key="product.code" class="item" >
           <div
             class="
               product-list product-list--second product-list--second__first-item
@@ -27,7 +27,7 @@
               class="product-list__image-safe product-list--second__image-safe"
             >
              <nuxt-link
-                  :to="{ name:'productCode1', params:{productCode1: product.code}}"
+                  :to="{ name:'productCode', params:{productCode: product.code}}"
                   title=""
                   class="product-list__image-safe-link sld"
                 >
@@ -111,32 +111,21 @@
   </div>
 </template>
 <script>
-import carousel from 'vue-owl-carousel'
-export default {
-  components: { carousel },
-}
-</script>
 
-<script>
+import carousel from 'vue-owl-carousel'
 import {mapGetters} from "vuex";
 
 export default {
-      data() {
-        return {
-          
-        }
-      },
-         
+  components: { carousel },
   computed: {
     ...mapGetters({
-      get_products1 : "get_products1"
+      get_products : "get_products"
     })
   },
   methods: {
-    getproducts1(){
-      return this.get_products1()
+    getproducts(){
+      return this.get_products().slice(13,19)
     }
   }
-  
 }
 </script>

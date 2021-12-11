@@ -24,46 +24,47 @@
           "
         >
           <div
-          v-for="product in getproducts2()" :key="product.code"
+            v-for="product in getproducts()"
+            :key="product.code"
             class="swiper-slide carousel-item item"
             style="width: 216.667px; margin-right: 10px"
           >
             <div class="product-list product-list--fourth">
               <div class="product-list__image-safe">
-                 <nuxt-link
-                  :to="{ name:'productCode2', params:{productCode2: product.code}}"
+                <nuxt-link
+                  :to="{
+                    name: 'productCode',
+                    params: { productCode: product.code },
+                  }"
                   title=""
                   class="product-list__image-safe-link sld"
                 >
                   <div class="slider-img">
-                    <img
-                      class="lazyimg"
-                      :src="product.img_url"
-                    />
-                  </div>                 
+                    <img class="lazyimg" :src="product.img_url" />
+                  </div>
                 </nuxt-link>
                 <a
                   href="/philips-50pus8505-50-126-cm-4k-uhd-android-tv-3-tarafli-ambilight-dahili-uydu.html"
                   class="product-list__image-safe-link"
                 >
-                  
                 </a>
               </div>
 
               <div class="product-list__content">
                 <div class="product-list__product-name">
-                  {{product.name}}
+                  {{ product.name }}
                 </div>
                 <div class="product-list__cost">
-                  <span class="product-list__price">{{product.cost}}</span>
-                  <span class="product-list__currency">{{product.currency}}</span>
+                  <span class="product-list__price">{{ product.cost }}</span>
+                  <span class="product-list__currency">{{
+                    product.currency
+                  }}</span>
                 </div>
               </div>
 
               <div class="product-list__comp"></div>
             </div>
           </div>
-          
         </div>
         <div
           class="
@@ -82,15 +83,16 @@
 </template>
 <script>
 import { directive } from 'vue-awesome-swiper'
+import { mapGetters } from 'vuex'
 
 // import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
 export default {
-  directives: {
-    swiper: directive,
-  },
   data() {
     return {
+      directives: {
+        swiper: directive,
+      },
       swiperOption: {
         slidesPerView: 5,
         spaceBetween: 10,
@@ -124,28 +126,17 @@ export default {
       },
     }
   },
+
+  computed: {
+    ...mapGetters({
+      get_products: 'get_products',
+    }),
+  },
+  methods: {
+    getproducts() {
+      return this.get_products().slice(20,30)
+    },
+  },
 }
 </script>
 
-<script>
-import {mapGetters} from "vuex";
-export default {
-      data() {
-        return {
-          
-        }
-      },
-         
-  computed: {
-    ...mapGetters({
-      get_products2 : "get_products2"
-    })
-  },
-  methods: {
-    getproducts2(){
-      return this.get_products2()
-    }
-  }
-  
-}
-</script>
