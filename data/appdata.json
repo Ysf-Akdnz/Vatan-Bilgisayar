@@ -2,87 +2,239 @@
     "products": [
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155_small.jpg",
-            "cost" : 7.999,
-            "currency" : "TL",
-            "code" : "MHDA3TU/A",
-            "name" : "iPhone 11 64 Gb Siyah"
+            "cost": 7.999,
+            "currency": "TL",
+            "code": "MHDA3TU/A",
+            "name": "iPhone 11 64 Gb Siyah"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/lenovo/thumb/TeoriV2-106781_small.jpg",
-            "cost" : 7.499,
-            "currency" : "TL",
-            "code" : "81WB0062TX",
-            "name" : "LENOVO IDEAPAD 3 CORE İ5 10210U 1.6GHZ-8GB-512GBSSD-15.6'-MX130 2GB-W10"
+            "cost": 7.499,
+            "currency": "TL",
+            "code": "81WB0062TX",
+            "name": "LENOVO IDEAPAD 3 CORE İ5 10210U 1.6GHZ-8GB-512GBSSD-15.6'-MX130 2GB-W10"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/lg/thumb/up77-1_small.jpg",
-            "cost" : 6.799,
-            "currency" : "TL",
-            "code" : "50UP77006LB",
-            "name" : "LG 50UP77006 50' 127 CM 4K UHD webOS SMART TV,DAHİLİ UYDU ALICI"
+            "cost": 6.799,
+            "currency": "TL",
+            "code": "50UP77006LB",
+            "name": "LG 50UP77006 50' 127 CM 4K UHD webOS SMART TV,DAHİLİ UYDU ALICI"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/lenovo/thumb/TeoriV2-108106_small.jpg",
-            "cost" : 699,
-            "currency" : "TL",
-            "code" : "ZA550238TR",
-            "name" : "LENOVO TAB M7 MTK 8321 1.3GHZ-2GB-32GB-BT-7'-CAM- ANDROID PIE"
+            "cost": 699,
+            "currency": "TL",
+            "code": "ZA550238TR",
+            "name": "LENOVO TAB M7 MTK 8321 1.3GHZ-2GB-32GB-BT-7'-CAM- ANDROID PIE"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/realme/thumb/128100-anaa_small.jpg",
-            "cost" : 2.399,
-            "currency" : "TL",
-            "code" : "C21_SİYAH_4_64",
-            "name" : "Realme C21 4 Gb Ram 64 Gb Akıllı Telefon Siyah"
+            "cost": 2.399,
+            "currency": "TL",
+            "code": "C21_SİYAH_4_64",
+            "name": "Realme C21 4 Gb Ram 64 Gb Akıllı Telefon Siyah"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/huawei/thumb/120475_small.jpg",
-            "cost" : 8.999,
-            "currency" : "TL",
-            "code" : "MATEBOOKD16/16/512",
-            "name" : "HUAWEI MATEBOOK D 16 AMD RYZEN 5 4600H 3GHZ-16GB-512GBSSD-16.1'-AMD-W10"
+            "cost": 8.999,
+            "currency": "TL",
+            "code": "MATEBOOKD16/16/512",
+            "name": "HUAWEI MATEBOOK D 16 AMD RYZEN 5 4600H 3GHZ-16GB-512GBSSD-16.1'-AMD-W10"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/128882_small.jpg",
-            "cost" : 8.499,
-            "currency" : "TL",
-            "code" : "UE55AU8000UXTK",
-            "name" : "SAMSUNG UE 55AU8000 55' 138 CM 4K UHD SMART TV,DAHİLİ UYDU ALICI"
+            "cost": 8.499,
+            "currency": "TL",
+            "code": "UE55AU8000UXTK",
+            "name": "SAMSUNG UE 55AU8000 55' 138 CM 4K UHD SMART TV,DAHİLİ UYDU ALICI"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/fakir/thumb/1_small.jpg",
-            "cost" : 279,
-            "currency" : "TL",
-            "code" : "RODY (KIRMIZI)",
-            "name" : "FAKIR RODY 2_IN_1 DİK SÜPÜRGE (KIRMIZI)"
+            "cost": 279,
+            "currency": "TL",
+            "code": "RODY (KIRMIZI)",
+            "name": "FAKIR RODY 2_IN_1 DİK SÜPÜRGE (KIRMIZI)"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/xiaomi/thumb/130633-1_small.jpg",
-            "cost" : 4.499,
-            "currency" : "TL",
-            "code" : "POCOX3-PR-256_BLACK",
-            "name" : "Xiaomi Poco X3 Pro 256 Gb Akıllı Telefon Siyah"
+            "cost": 4.499,
+            "currency": "TL",
+            "code": "POCOX3-PR-256_BLACK",
+            "name": "Xiaomi Poco X3 Pro 256 Gb Akıllı Telefon Siyah"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/kioxia/thumb/117108_small.jpg",
-            "cost" : 341,
-            "currency" : "TL",
-            "code" : "LTC10Z240GG8",
-            "name" : "Kioxia 240GB Exceria Serisi Sata 3.0 SSD (555MB Okuma / 540MB Yazma)"
+            "cost": 341,
+            "currency": "TL",
+            "code": "LTC10Z240GG8",
+            "name": "Kioxia 240GB Exceria Serisi Sata 3.0 SSD (555MB Okuma / 540MB Yazma)"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/hp/thumb/130117-4_small.jpg",
-            "cost" : 5.599,
-            "currency" : "TL",
-            "code" : "2Z9T4EA",
-            "name" : "HP 2Z9T4EA INTEL CORE İ3 10100T 3 GHZ 4 GB 256 GB SSD INTEL UHD 630 WIN10 21.5''"
+            "cost": 5.599,
+            "currency": "TL",
+            "code": "2Z9T4EA",
+            "name": "HP 2Z9T4EA INTEL CORE İ3 10100T 3 GHZ 4 GB 256 GB SSD INTEL UHD 630 WIN10 21.5''"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/129944_small.jpg",
-            "cost" : 3.399,
-            "currency" : "TL",
-            "code" : "MKQ63TU/A",
-            "name" : "Apple Watch SE GPS, 44mm Space Grey Aluminium Case with Midnight Sport Band"
+            "cost": 3.399,
+            "currency": "TL",
+            "code": "MKQ63TU/A",
+            "name": "Apple Watch SE GPS, 44mm Space Grey Aluminium Case with Midnight Sport Band"
         }
+    ],
+    "products1": [
+        {
+            "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/addison/thumb/17953_small.jpg",
+            "cost": 22,
+            "currency": "TL",
+            "code": "300870",
+            "name": "ADDISON 300870 EKRAN TEMİZLEYİCİ SPREY 200ML+MİKROFİBER BEZ"
+        },
+        {
+            "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/addison/thumb/v2-89359_small.jpg",
+            "cost": 180,
+            "currency": "TL",
+            "code": "300448",
+            "name": "ADDISON 300448 15.6' NOTEBOOK SIRT ÇANTASI(SİYAH)"
+        },
+        {
+            "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/s-link/thumb/120283_small.jpg",
+            "cost": 124,
+            "currency": "TL",
+            "code": "IP-G10D BEYAZ",
+            "name": "S-LİNK IP-G10D 10.000mAh MİCRO USB+TYPE-C 2 USB PORT TAŞINABİLİR ŞARJ CİHAZI"
+        },
+        {
+            "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/s-link/thumb/120284_small.jpg",
+            "cost": 124,
+            "currency": "TL",
+            "code": "IP-G10D SİYAH",
+            "name": "S-LİNK IP-G10D 10.000mAh MİCRO USB+TYPE-C 2 USB PORT TAŞINABİLİR ŞARJ CİHAZI"
+        },
+        {
+            "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/s-link/thumb/v2-56900-1_small.jpg",
+            "cost": 24,
+            "currency": "TL",
+            "code": "SL-U61",
+            "name": "S-LINK SL-U61 USB DEN SES KART ÇEVİRİCİ ADAPTÖR"
+        },
+        {
+            "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/s-link/thumb/v2-72048_small.jpg",
+            "cost": 79,
+            "currency": "TL",
+            "code": "SPG3-J-5",
+            "name": "S-LINK SPG3-J-5 5'Lİ AKIM KORUMALI PRİZ 1.5M- (SİYAH)"
+        },
+        {
+            "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/inca/thumb/TeoriV2-99425_small.jpg",
+            "cost": 44,
+            "currency": "TL",
+            "code": "IMP-020",
+            "name": "INCA IMP-020 270x350x3mm MEDIUM GAMİNG MOUSEPAD"
+        },
+        {
+            "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/oppo/thumb/122488_small.jpg",
+            "cost": 349,
+            "currency": "TL",
+            "code": "OB19B1/S",
+            "name": "OPPO Band OB19B1 Akıllı Bileklik Siyah"
+        }
+    ],
+    
+    "products2":
+    [
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/philips/thumb/philips-50pus8505-gorseli-108765_small.jpg",
+            "cost":6999,
+            "currency":"TL",
+            "code": "1",
+            "name":"PHILIPS 50PUS8505 50' 126 CM 4K UHD ANDROID TV3 TARAFLI AMBILIGHT,DAHILI UYDU"
+          
+
+        },
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/seg/thumb/untitled-2_small.jpg",
+            "cost":1599,
+            "currency":"TL",
+            "code": "2",
+            "name":"SEG 32SBH510 32'' 80 CM HD TV,DAHİLİ UYDU ALICI"
+
+        },
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/121935_small.jpg",
+            "cost":3499,
+            "currency":"TL",
+            "code": "3",
+            "name":"Samsung Galaxy A32 128 Gb Akıllı Telefon Siyah"
+          
+
+        },
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/xiaomi/thumb/128738-1_small.jpg",
+            "cost":2099,
+            "currency":"TL",
+            "code": "4",
+            "name":"Xiaomi Redmi 9c 32 Gb Akıllı Telefon Mavi"
+          
+
+        },
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/gigabyte/thumb/126589_small.jpg",
+            "cost":1259,
+            "currency":"TL",
+            "code": "5",
+            "name":" GIGABYTE GeForce GT 1030 LOW PROFILE D4 2GB DRR4 64Bit Nvidia Ekran Kartı"
+          
+
+        },
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/asus/thumb/v2-86914-9_small.jpg",
+            "cost":1236,
+            "currency":"TL",
+            "code": "6",
+            "name":" ASUS GeForce GT1030 GDDR5 2GB 64Bit NVIDIA Ekran Kartı"
+          
+
+        },
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/asus/thumb/123266_small.jpg",
+            "cost":3299,
+            "currency":"TL",
+            "code": "7",
+            "name":" ASUS X515MA CELERON N4020 1.1GHZ-4GB RAM-128GB SSD-15.6''-W10 NOTEBOOK"
+          
+
+        },
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/huawei/thumb/120475_small.jpg",
+            "cost":8999,
+            "currency":"TL",
+            "code": "8",
+            "name":"HUAWEI MATEBOOK D 16 AMD RYZEN 5 4600H 3GHZ-16GB-512GB SSD-16.1''-AMD-W10"
+          
+
+        },
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/110034_small.jpg",
+            "cost":1799,
+            "currency":"TL",
+            "code": "9",
+            "name":"SAMSUNG GALAXY TAB A7 SM-T500NZAATUR GRİ 2.0+ 1.8GHZ-32GB DISK-3GB-10.4''-AND10"
+          
+
+        },
+        {
+            "img_url":"https://cdn.vatanbilgisayar.com/Upload/PRODUCT/lenovo/thumb/TeoriV2-108106_small.jpg",
+            "cost":699,
+            "currency":"TL",
+            "code": "10",
+            "name":"LENOVO TAB M7 MTK 8321 1.3GHZ-2GB-32GB-BT-7''-CAM- ANDROID PIE"
+          
+
+        }
+      
     ]
 }

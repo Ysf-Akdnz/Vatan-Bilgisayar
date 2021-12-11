@@ -148,11 +148,15 @@ export default {
 
   created(){
     this.fetchproducts();
+    this.fetchproducts1();
+    this.fetchproducts2();
       },
   
   methods: {
     ...mapActions({
-      fetchproducts: "fetchproducts"
+      fetchproducts: "fetchproducts",
+      fetchproducts1: "fetchproducts1",
+      fetchproducts2: "fetchproducts2"
     }) 
   }
 }

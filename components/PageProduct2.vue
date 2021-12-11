@@ -28,7 +28,7 @@
               </li>
               <li>
                 <a href="javascript:void(0)" class="bradcrumb-item"
-                  >{{get_product().code}}</a
+                  >{{get_product2().code}}</a
                 >
               </li>
             </ul>
@@ -175,7 +175,7 @@
                               src="/assets/dist/images/placeHolder.gif"
                               title="iPhone&nbsp;11 64 Gb Siyah"
                               data-zoom-image="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155_large.jpg"
-                              :srcset="get_product().img_url"
+                              :srcset="get_product2().img_url"
                             />
                           </a>
                         </div>
@@ -565,19 +565,14 @@
                           </a>
                         </div>
 
-                        <div
-                          class="product-list__product-code pull-left"
-                          data-productcode="MHDA3TU/A"
-                        >
-                          {{get_product().code}}
-                        </div>
+                       
                       </div>
 
                       <div
                         class="product-list__content product-detail-big-price"
                       >
                         <h1 class="product-list__product-name">
-                          {{get_product().name}}
+                          {{get_product2().name}}
                         </h1>
 
                         <div
@@ -590,8 +585,8 @@
                             "
                           >
                           </h3>
-                          <span class="product-list__price">{{get_product().cost}}</span>
-                          <span class="product-list__currency">{{get_product().currency}}</span>
+                          <span class="product-list__price">{{get_product2().cost}}</span>
+                          <span class="product-list__currency">{{get_product2().currency}}</span>
                         </div>
                       </div>               
                       <div class="d-table hidden-xs">
@@ -1191,18 +1186,18 @@ import {mapGetters} from "vuex";
 export default {
   data() {
     return {
-      prd_code: this.$route.params.productCode 
+      prd_code: this.$route.params.productCode2
     }
   },
 
   computed: {
     ...mapGetters({
-      get_productwithcode: "get_productwithcode"
+      get_productwithcode2: "get_productwithcode2"
     }),
   },
   methods: {
-    get_product(){
-    return this.get_productwithcode(this.prd_code)
+    get_product2(){
+    return this.get_productwithcode2(this.prd_code)
     
     }
   }

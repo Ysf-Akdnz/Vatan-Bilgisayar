@@ -10,14 +10,14 @@
         :nav="false"
         :responsive="{
           0: {
-            items: 1,
+            items: 1
           },
           600: {
             items: 2,
           },
         }"
       >
-        <div v-for="item in 8" :key="item" class="item">
+        <div v-for="product in getproducts1()" :key="product.code" class="item" >
           <div
             class="
               product-list product-list--second product-list--second__first-item
@@ -26,6 +26,18 @@
             <div
               class="product-list__image-safe product-list--second__image-safe"
             >
+             <nuxt-link
+                  :to="{ name:'productCode1', params:{productCode1: product.code}}"
+                  title=""
+                  class="product-list__image-safe-link sld"
+                >
+                  <div class="slider-img">
+                    <img
+                      class="lazyimg"
+                      :src="product.img_url"
+                    />
+                  </div>                 
+                </nuxt-link>
               <a
                 href="/s-link-sl-ec62-pd-20w-hizli-ev-sarj-adaptoru.html"
                 title=""
@@ -33,37 +45,9 @@
               >
                 <picture>
                   <!--[if IE 9]><video style="display: none;"><![endif]-->
-                  <source
-                    srcset="
-                      https://cdn.vatanbilgisayar.com/Upload/PRODUCT/s-link/thumb/126588-2_small.jpg
-                    "
-                    media="(min-width: 1000px)"
-                    alt="S-LİNK SL-EC62 PD 20W HIZLI EV ŞARJ ADAPTÖRÜ"
-                    title="S-LİNK SL-EC62 PD 20W HIZLI EV ŞARJ ADAPTÖRÜ"
-                  />
-                  <source
-                    srcset="
-                      https://cdn.vatanbilgisayar.com/Upload/PRODUCT/s-link/thumb/126588-2_small.jpg
-                    "
-                    media="(min-width: 600px)"
-                    alt="S-LİNK SL-EC62 PD 20W HIZLI EV ŞARJ ADAPTÖRÜ"
-                    title="S-LİNK SL-EC62 PD 20W HIZLI EV ŞARJ ADAPTÖRÜ"
-                  />
-                  <source
-                    srcset="
-                      https://cdn.vatanbilgisayar.com/Upload/PRODUCT/s-link/thumb/126588-2_small.jpg
-                    "
-                    media="(min-width: 300px)"
-                    alt="S-LİNK SL-EC62 PD 20W HIZLI EV ŞARJ ADAPTÖRÜ"
-                    title="S-LİNK SL-EC62 PD 20W HIZLI EV ŞARJ ADAPTÖRÜ"
-                  />
+                 
                   <!--[if IE 9]></video><![endif]-->
-                  <img
-                    src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/s-link/thumb/126588-2_small.jpg"
-                    class="img-responsive product-list__image"
-                    alt="S-LİNK SL-EC62 PD 20W HIZLI EV ŞARJ ADAPTÖRÜ"
-                    title="S-LİNK SL-EC62 PD 20W HIZLI EV ŞARJ ADAPTÖRÜ"
-                  />
+                  
                 </picture>
               </a>
             </div>
@@ -87,7 +71,7 @@
                   class="clasic-link"
                   title=""
                 >
-                  SL-EC62
+                  {{product.code}}
                 </a>
               </div>
               <div class="product-list__product-name">
@@ -96,13 +80,13 @@
                   class="clasic-link"
                   title=""
                 >
-                  S-LİNK SL-EC62 PD 20W HIZLI EV ŞARJ ADAPTÖRÜ
+                  {{product.name}}
                 </a>
               </div>
               <div class="product-list__cost">
-                <span class="product-list__price">119 </span>
-                <span class="product-list__currency">TL</span>
-                <span class="product-list__current-price">133 TL</span>
+                <span class="product-list__price">{{product.cost}} </span>
+                <span class="product-list__currency">{{product.currency}}</span>
+                
               </div>
               <div class="wrapper-condition">
                 <div class="in-wrapper-condition">
@@ -130,5 +114,29 @@
 import carousel from 'vue-owl-carousel'
 export default {
   components: { carousel },
+}
+</script>
+
+<script>
+import {mapGetters} from "vuex";
+
+export default {
+      data() {
+        return {
+          
+        }
+      },
+         
+  computed: {
+    ...mapGetters({
+      get_products1 : "get_products1"
+    })
+  },
+  methods: {
+    getproducts1(){
+      return this.get_products1()
+    }
+  }
+  
 }
 </script>
