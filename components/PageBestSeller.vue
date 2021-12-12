@@ -88,11 +88,11 @@ import { mapGetters } from 'vuex'
 // import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
 export default {
+  directives: {
+    swiper: directive,
+  },
   data() {
     return {
-      directives: {
-        swiper: directive,
-      },
       swiperOption: {
         slidesPerView: 5,
         spaceBetween: 10,
@@ -134,7 +134,7 @@ export default {
   },
   methods: {
     getproducts() {
-      return this.get_products().slice(20,30)
+      return this.get_products().slice(20, 30)
     },
   },
 }

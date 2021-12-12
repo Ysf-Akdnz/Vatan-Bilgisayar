@@ -1,9 +1,12 @@
+/* import axios from "axios"; */
+/* import data from "../data/appdata.json"; */
 
-import data from "../data/appdata.json";
+import axios from "axios"
 
 
 export const state = () => ({
   products: [],
+  /* apilink: 'http://localhost:3080' */
 })
 export const getters = {
   get_products: (state) => () => {
@@ -16,8 +19,14 @@ export const getters = {
 
 }
 export const actions = {
-  fetchproducts({ commit, dipatch }) {
-    commit('setproducts', data.products)
+  fetchproducts({ commit, dispatch }) {
+    axios.get("http://localhost:3080/api/products")
+      .then((response) => {
+        commit('setproducts', response.data)
+      },
+        (error) => {
+          alert(error)
+        })
   },
 }
 export const mutations = {

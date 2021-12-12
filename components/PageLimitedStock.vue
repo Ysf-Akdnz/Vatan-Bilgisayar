@@ -5,6 +5,7 @@
         <h3 class="global-component-header__title">Web'e Özel Sınırlı Stok</h3>
       </div>
       <carousel
+      v-if="getproducts()"
         :loop="true"
         :margin="10"
         :nav="false"
