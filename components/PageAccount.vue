@@ -1,38 +1,90 @@
 <script>
+import { mapActions } from 'vuex'
+import { auth } from '../plugins/firebase.js'
+
 export default {
-    data() {
-        return {activeindex: 0}
+  name: 'login',
+  props: {
+    openLogin: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      isAlreadyLogged: false,
+      email: '',
+      password: '',
+      name: '',
+      phone: '',
+      showPassword: true,
     }
+  },
+  created() {
+    this.OnStateChanged()
+  },
+  methods: {
+    ...mapActions({
+      register: 'register',
+      login: 'login',
+    }),
+    girisYap() {
+      this.login({ email: this.email, password: this.password }).then(() => {
+        this.OnStateChanged()
+      })
+    },
+    OnStateChanged() {
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          this.isAlreadyLogged = true
+          this.$router.push('/') // Anasayfaya yönlendiriyor giriş yapılmışsa
+        } else this.isAlreadyLogged = false
+      })
+    },
+    _register() {
+      this.register({
+        email: this.email,
+        password: this.password,
+        name: this.name,
+        phone: this.phone,
+      })
+    },
+  },
 }
 </script>
 <template>
   <main class="signup basket-signup clear-singin">
-    <div class="clearfix">
+    <div v-if="!isAlreadyLogged" class="clearfix">
       <div id="signup-form-container" class="signup-form">
         <ul class="nav" id="loginTab">
-          <li class="" :class="{active: activeindex==0}">
-            <a 
-              href="#signin-section"
-              id="signin"
-              data-toggle="tab"
-              :aria-expanded="activeindex==0"
-              @click="activeindex=0"
-              >Giriş Yap</a
+          <li :class="{ active: openLogin === true }">
+            <nuxt-link
+              :to="{
+                name: 'login-signstate',
+                params: { openLogin: true, signstate: 'signin' },
+              }"
+              >Giriş Yap</nuxt-link
             >
           </li>
-          <li class="" :class="{active: activeindex==1}">
-            <a
-              href="#signup-section"
-              id="signup"
-              data-toggle="tab"
-              :aria-expanded="activeindex==1"
-              @click="activeindex=1"
-              >Üye Ol</a
+          <li :class="{ active: openLogin === false }">
+            <nuxt-link
+              :to="{
+                name: 'login-signstate',
+                params: {
+                  openLogin: false,
+                  signstate: 'signup',
+                },
+              }"
+              >Üye Ol</nuxt-link
             >
           </li>
         </ul>
         <div class="tab-content">
-          <div class="tab-pane collapse fade " id="signin-section" :class="{'active in': activeindex==0}">
+          <div
+            id="signin-section"
+            class="tab-pane collapse fade"
+            :class="{ 'active in': openLogin === true }"
+          >
             <form
               action="/login?returnUrl=%2F"
               class="form-horizontal"
@@ -49,6 +101,8 @@ export default {
               <div class="form-group">
                 <label for="">E-mail</label>
                 <input
+                  v-model="email"
+                  v-model.lazy="email"
                   class="form-control email-input text-box single-line"
                   data-val="true"
                   data-val-email="Geçersiz e-posta adresi"
@@ -73,13 +127,14 @@ export default {
                 <label for="">Şifre</label>
                 <div class="input-group">
                   <input
+                    v-model="password"
                     class="form-control"
                     data-val="true"
                     data-val-required="Şifre alanı boş geçilemez"
                     id="pass"
                     name="Password"
                     placeholder="****"
-                    type="password"
+                    :type="showPassword ? 'password' : 'text'"
                   />
                   <span
                     class="field-validation-valid text-danger"
@@ -88,8 +143,15 @@ export default {
                     style="font-size=12px !important;"
                   ></span>
                   <div class="input-group-addon">
-                    <a href="#" class="toggle-password-visible"
-                      ><i class="icon-eye-alt"></i
+                    <a
+                      href="#"
+                      class="toggle-password-visible"
+                      @click.prevent="
+                        {
+                          showPassword = !showPassword
+                        }
+                      "
+                      ><i class="fas fa-eye"></i
                     ></a>
                   </div>
                 </div>
@@ -105,6 +167,7 @@ export default {
                   id="login-button"
                   type="submit"
                   class="btn btn-primary signup-form__button"
+                  @click.prevent="girisYap()"
                 >
                   GİRİŞ YAP
                 </button>
@@ -129,7 +192,11 @@ export default {
               </div>
             </form>
           </div>
-          <div class="tab-pane" id="signup-section" :class="{'active in': activeindex==1}">
+          <div
+            class="tab-pane"
+            id="signup-section"
+            :class="{ 'active in': openLogin === false }"
+          >
             <form
               action="/Account/Register?returnUrl=%2F"
               class="form-horizontal"
@@ -146,6 +213,7 @@ export default {
               <div class="form-group">
                 <label for="">İsim Soyisim<sup>*</sup></label>
                 <input
+                  v-model="name"
                   class="form-control text-box single-line"
                   data-val="true"
                   data-val-maxlength="İsim Soyisim alanı en fazla 50 karakter olmalıdır"
@@ -168,6 +236,7 @@ export default {
               <div class="form-group">
                 <label for="">E-mail Adresi<sup>*</sup></label>
                 <input
+                  v-model="email"
                   class="form-control email-input text-box single-line"
                   data-val="true"
                   data-val-email="Geçersiz e-posta adresi"
@@ -197,6 +266,7 @@ export default {
                 <div class="input-group w-100">
                   <div class="db-block">
                     <input
+                      v-model="password"
                       class="form-control text-box single-line"
                       data-val="true"
                       data-val-minlength="En az 6 karakter girmelisiniz."
@@ -205,12 +275,19 @@ export default {
                       id="Password"
                       name="Password"
                       placeholder=""
-                      type="password"
+                      :type="showPassword ? 'password' : 'text'"
                       value=""
                     />
                     <div class="input-group-addon">
-                      <a href="#" class="toggle-password-visible"
-                        ><i class="icon-eye-alt"></i
+                      <a
+                        href="#"
+                        class="toggle-password-visible"
+                        @click.prevent="
+                          {
+                            showPassword = !showPassword
+                          }
+                        "
+                        ><i class="fas fa-eye"></i
                       ></a>
                     </div>
                   </div>
@@ -224,6 +301,7 @@ export default {
               <div class="form-group">
                 <label for="">Cep Telefonu<sup>*</sup></label>
                 <input
+                  v-model="phone"
                   class="form-control phone-input text-box single-line"
                   data-val="true"
                   data-val-regex="Geçerli telefon numarası giriniz"
@@ -310,6 +388,7 @@ export default {
                 <button
                   type="submit"
                   class="btn btn-primary signup-form__button"
+                  @click.prevent="_register()"
                 >
                   GÖNDER
                 </button>
@@ -320,6 +399,32 @@ export default {
         </div>
         <div class="signup-form__footer">
           <img src="/assets/dist/images/signup_logos.png" alt="Logos" />
+        </div>
+      </div>
+    </div>
+    <!--Giriş yapıldıysa-->
+    <div v-if="isAlreadyLogged" class="row">
+      <div class="col-xs-12">
+        <div class="empty-basket">
+          <div class="empty-basket-content">
+            <span class="icon-website"></span>
+          </div>
+          <h2 style="color: red">Bu sayfaya erişemezsiniz !</h2>
+          <h4>Zaten giriş yapmışsınız.</h4>
+          <img
+            style="width: 640px; height: 512px"
+            src="https://www.freepnglogos.com/uploads/minions-png/minions-png-the-minion-language-despicable-38.png"
+          />
+          <p>Eğer isterseniz Anasayfa'ya geri dönebilirsiniz.</p>
+          <a
+            class="
+              btn btn-primary
+              signup-form__button
+              change-password-form__button
+            "
+            href="/"
+            >ANASAYFA</a
+          >
         </div>
       </div>
     </div>

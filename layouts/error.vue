@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      pageNotFound: 'Bu sayfa projeye dahil değildir...',
+      pageNotFound: '404 FOUND ERROR',
       otherError: 'An error occurred',
     }
   },

@@ -1,9 +1,51 @@
 <script>
+import { mapActions } from 'vuex'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../plugins/firebase.js'
+
 import HeaderCartButton from './HeaderCartButton.vue'
 import PageHeaderCategories from './PageHeaderCategories.vue'
+
 export default {
   components: { HeaderCartButton, PageHeaderCategories },
+  data() {
+    return {
+      isLoggedIn: false,
+      currentUser: false,
+      name: '',
+      mailim: '',
+      dropbarName: 'GİRİŞ',
+      uid: null,
+    }
+  },
+  created() {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.isLoggedIn = true
+        this.dropbarName = 'HESABIM'
+      } else {
+        this.isLoggedIn = false
+        this.dropbarName = 'GİRİŞ YAP'
+      }
+    })
+  },
   methods: {
+    ...mapActions({
+      logout: 'logout',
+    }),
+    getUserdata() {
+      // Kullanıcı verilerini çekiyoruz.
+      if (this.isLoggedIn) {
+        // kullanici diye bir variable tanımladık. Email ile ismi çektik.
+        const kullanici = auth.currentUser
+        this.mailim = kullanici.email
+        this.name = kullanici.displayName
+        this.uid = kullanici.uid
+      }
+    },
+    dk() {
+      alert(this.mailim + ' ' + name + ' ' + this.uid)
+    },
     dropdown_toggle(open) {
       const target = event.target
       if (open) {
@@ -14,11 +56,14 @@ export default {
         }, 100)
       }
     },
+    parent_open(event) {
+      const Target = event.target
+      return Target.parentElement.classList.contains('open')
+    },
   },
 }
 </script>
 <template>
-
   <header>
     <nav class="navbar navbar--inverse navbar-fixed-top">
       <div
@@ -164,31 +209,65 @@ export default {
                   <div class="wrap-button">
                     <div class="btn-group my-account">
                       <button
-                        @blur="dropdown_toggle(false)"
-                        @focus="dropdown_toggle(true)"
-                        type="button"
                         id="btnMyAccount"
+                        type="button"
                         class="btn btn-primary btn-login dropdown-toggle"
                         style="color: white"
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
+                        @blur="dropdown_toggle(false)"
+                        @focus="dropdown_toggle(true)"
+                        @mouseover="getUserdata"
                       >
                         <span><i class="fas fa-user"></i></span>
-                        <span id="type">GİRİŞ YAP</span>
+                        <span id="type">{{ dropbarName }}</span>
                       </button>
-
-                      <ul class="dropdown-menu dropdown-menu-home login">
+                      <ul
+                        v-show="parent_open && isLoggedIn === true"
+                        class="dropdown-menu dropdown-menu-home account"
+                      >
+                        <li><a href="/uyeBilgi/uyeBilgi">Üyeliğim</a></li>
                         <li>
-                          <a
-                            href="/login?returnUrl=%2Fiphone-13-akilli-telefon.html&amp;logtab=signin"
-                            >Giriş Yap</a
+                          <a @click.prevent="dk()">Hesap bilgilerini göster</a>
+                        </li>
+                        <li>
+                          <a href="/uyeBilgi/siparistakip">Siparişlerim</a>
+                        </li>
+                        <li>
+                          <a href="/uyeBilgi/favorilistem">Favori Ürünlerim</a>
+                        </li>
+                        <li>
+                          <a href="/uyeBilgi/uyeAdres">Adres Bilgilerim</a>
+                        </li>
+                        <li><a href="/uyeBilgi/mesaj">Mesajlarım</a></li>
+                        <li @click.prevent="logout()">
+                          <a>ÇIKIŞ <i class="fas fa-sign-out-alt"></i></a>
+                        </li>
+                      </ul>
+                      <ul
+                        v-show="parent_open && isLoggedIn === false"
+                        class="dropdown-menu dropdown-menu-home login"
+                      >
+                        <li>
+                          <nuxt-link
+                            :to="{
+                              name: 'login-signstate',
+                              params: { openLogin: true, signstate: 'signin' },
+                            }"
+                            >Giriş Yap</nuxt-link
                           >
                         </li>
                         <li>
-                          <a
-                            href="/login?returnUrl=%2Fiphone-13-akilli-telefon.html&amp;logtab=signup"
-                            >Üye Ol</a
+                          <nuxt-link
+                            :to="{
+                              name: 'login-signstate',
+                              params: {
+                                openLogin: false,
+                                signstate: 'signup',
+                              },
+                            }"
+                            >Üye Ol</nuxt-link
                           >
                         </li>
                       </ul>
@@ -197,8 +276,8 @@ export default {
                     <div class="btn-group referrer-search-area">
                       <i class="icon-search"></i>
                     </div>
-                    <!-- Burası sepet butonu olacak -->
                     <header-cart-button />
+                    <!-- Burası SEPETİM BUTONU -->
                   </div>
                 </div>
                 <div id="navbar-search-results"></div>
@@ -207,8 +286,8 @@ export default {
           </div>
         </div>
       </div>
-      <!-- Burası Kategori olacak -->
       <page-header-categories />
+      <!-- Burası Kategori -->
     </nav>
   </header>
 </template>

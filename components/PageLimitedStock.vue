@@ -117,7 +117,7 @@ import carousel from 'vue-owl-carousel'
 import {mapGetters} from "vuex";
 
 export default {
-  components: { carousel },
+  components: { carousel},
   computed: {
     ...mapGetters({
       get_products : "get_products"
