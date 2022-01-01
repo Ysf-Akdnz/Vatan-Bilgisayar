@@ -611,8 +611,8 @@
                           <div class="d-cell product-button--cell">
                             <button
                               id="add-to-cart-button"
-                              onclick="AddToBasket(113155, 0, 4, [])"
                               class="btn btn-success basketBTN"
+                              @click="addToCart({pid:prd_code, count: 1})"
                             >
                               <i class="fas fa-shopping-cart"></i>
                               <span>SEPETE EKLE</span>
@@ -1199,7 +1199,7 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   data() {
@@ -1217,6 +1217,9 @@ export default {
     get_product() {
       return this.get_productwithcode(this.prd_code)
     },
+    ...mapActions({
+      addToCart: 'addToCart',
+    }),
   },
 }
 </script>
