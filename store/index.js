@@ -1,14 +1,14 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 
-import { ref, onValue, set, push, child, remove } from "firebase/database";
+import { ref, onValue, set, push, child, remove, update } from "firebase/database";
 import { realDb, auth } from '../plugins/firebase.js';
 
 
 export const state = () => ({
   users: {},
   products: [],
-  inCart: [],
-  cartProducts: [
+  inCart: [],  // veritabında tutulacak veritabanı modeli
+  cartProducts: [  // sepetimde görünecek arayüz verileri
     {
       product: {},
       count: 0,
@@ -20,23 +20,13 @@ export const getters = {
   get_products: (state) => () => {
     return state.products
   },
-  Cart: (state) => () => {
-    return state.inCart
-  },
-  getCartProducts: (state) => () => {
+  getCartProducts: (state) => () => { // cartProducts 'ı çeken fonksiyon
     return state.cartProducts
   },
 
   get_productwithcode: (state) => (code) => {
     return state.products.find(item => item.code === code)
   },
-  isLogged: () => () => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        return true
-      } return false
-    })
-  }
 }
 export const actions = {
   fetchproducts({ commit, dispatch }) {
@@ -52,7 +42,7 @@ export const actions = {
       if (user) {
         const cartref = ref(realDb, "users/" + user.uid + "/inCart")
         onValue(cartref, (snapshot) => {
-          if (snapshot.val() != null) {
+          if (snapshot.val() != null) { // dictionary tipinde gelen bir veriyi arraya gönüştürür ve key'de dictionary key'lerinde array'in elemanlarına ekler.
             arr = Object.entries(snapshot.val()).map(e => Object.assign(e[1], { key: e[0] }))
           }
           commit('setInCart', arr)
@@ -63,11 +53,11 @@ export const actions = {
       }
     });
   },
-  addToCart({ commit, dispatch }, payload) {
+  addToCart({ commit, dispatch }, payload) {  // ürünü sepete ekler
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const cartref = ref(realDb, "users/" + user.uid + "/inCart")
-        push(cartref, payload)
+        push(cartref, payload) // payload = sepet ürünü 
       }
       else {
         commit('addToCart', payload)
@@ -75,12 +65,12 @@ export const actions = {
     });
     dispatch('fetchCart')
   },
-  removeFromCart({ commit, state, dispatch }, id) {
+  removeFromCart({ commit, state, dispatch }, id) { // ürünü sepetten çıkarır
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const cartref = ref(realDb, "users/" + user.uid + "/inCart")
-        const key = state.inCart.find(inCart => inCart.id === id).key
-        remove(child(cartref, key))
+        const key = state.inCart.find(inCart => inCart.id === id).key // dictionary içerisindeki bulunan bu key'e
+        remove(child(cartref, key)) // sahip veriyi bulup siliyoruz
       }
       else {
         commit('removeFromCart', id)
@@ -88,7 +78,37 @@ export const actions = {
     });
     dispatch('fetchCart')
   },
-  register({ commit }, payload) {
+  changeCountCart({ dispatch, commit, state }, idCount) { // sepetimdeki ürünün adedini günceller
+    const item = state.inCart.find(inCart => inCart.id === idCount.id)
+    const nextCount = idCount.count + item.count
+    const nCount = nextCount >= 1 ? nextCount : 1
+
+    const key = item.key
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const cartref = ref(realDb, "users/" + user.uid + "/inCart")
+        update(child(cartref, key), { count: nCount })
+
+      }
+      else {
+        commit('changeCartCount', idCount)
+      }
+    });
+    dispatch('fetchCart')
+  },
+  deleteBasket({ dispatch, commit, state }) { // sepetime eklenen tüm ürünleri kaldırır
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const cartref = ref(realDb, "users/" + user.uid + "/inCart")
+        set(cartref, null);
+      }
+      else {
+        commit('deleteBasket')
+      }
+    });
+    dispatch('fetchCart')
+  },
+  register({ commit }, payload) {  
     createUserWithEmailAndPassword(auth, payload.email, payload.password)
       .then((userCredential) => {
         alert("Hesap" + payload.email + "başarılı bir şekilde oluşturuldu!")
@@ -135,10 +155,6 @@ export const actions = {
       });
 
   },
-  setUser({ commit }, item) {
-    commit('setUser', item)
-  },
-
 }
 export const mutations = {
   setproducts(state, array) {
@@ -147,9 +163,9 @@ export const mutations = {
   setInCart(state, array) {
     state.inCart = array
     state.cartProducts = []
-    state.inCart.forEach(element => {
-      const product = state.products.find(item => item.code === element.pid)
-      const cartProduct = {
+    state.inCart.forEach(element => { // inCart'ın içersindeki ürünler yardımıyla yani pid'si ile ürünü buluyoruz
+      const product = state.products.find(item => item.code === element.pid) // sonra cartProducts'ın içini dolduruyoruz
+      const cartProduct = {  // bu cartProductsı daha sonra arayüzde kullanıyoruz 
         product,
         count: element.count,
         id: element.id
@@ -162,11 +178,13 @@ export const mutations = {
     const index = state.inCart.indexOf(item)
     state.inCart.splice(index, 1);
   },
+  deleteBasket(state) {
+    state.inCart = []
+  },
   addToCart(state, product) {
     state.inCart.push(product)
   },
-  setUser(state, item) {
-    state.user = item
-  },
-
+  changeCartCount(state, idCount) { // inCart'taki belirtiğimiz id'ye sahip ürünün sayısını günceller.
+    state.inCart.find(item => item.id === idCount.id).count += idCount.count
+  }
 }

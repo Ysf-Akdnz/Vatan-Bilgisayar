@@ -14,7 +14,9 @@ export default {
   },
   methods: {
     ...mapActions({
-      removeFromCart: 'removeFromCart'
+      removeFromCart: 'removeFromCart',
+      changeCountCart: 'changeCountCart',
+      deleteBasket: 'deleteBasket',
     }),
     getproducts() {
       return this.get_products()
@@ -26,7 +28,6 @@ export default {
       })
       return total
     },
-    
   },
 }
 </script>
@@ -293,7 +294,9 @@ export default {
                       <div class="basket-cart__table-column count">
                         <div class="number-input">
                           <a
-                            href="javascript:changeProductCount(113155,0,-1,23197315);"
+                            @click.prevent="
+                              changeCountCart({ id: item.id, count: -1 })
+                            "
                             >-</a
                           >
                           <div class="input-wrapper">
@@ -310,15 +313,16 @@ export default {
                                 min="1"
                                 name="item.BasketItem.TQuantityA"
                                 onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57"
-                                type="number"
-                                value="1"
+                                :value="item.count"
                                 style="text-align: right"
                               />
                             </form>
                             <span>Adet</span>
                           </div>
                           <a
-                            href="javascript:changeProductCount(113155,0,1,23197315);"
+                            @click.prevent="
+                              changeCountCart({ id: item.id, count: 1 })
+                            "
                             >+</a
                           >
                         </div>
@@ -370,9 +374,8 @@ export default {
                   </div>
                   <div class="clearfix basket-cart__footer text-center">
                     <a
-                      href="javascript:void(0)"
                       class="basket-cart__footer-link"
-                      onclick="DeleteBasket()"
+                      @click.prevent="deleteBasket()"
                       ><i class="fas fa-trash-alt"></i>
                       <span>SEPETİ BOŞALT</span></a
                     >
@@ -987,11 +990,11 @@ export default {
                   </div>
                   <img src="" alt="" />
                   <table class="table basket-ordersummary__list">
-                    <tbody>       
+                    <tbody>
                       <tr class="basket-ordersummary__total">
                         <td>TOPLAM</td>
                         <td class="text-right active">
-                          <strong> {{gettotal()}} </strong> TL
+                          <strong> {{ gettotal() }} </strong> TL
                         </td>
                       </tr>
                     </tbody>
