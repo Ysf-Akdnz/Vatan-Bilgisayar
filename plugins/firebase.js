@@ -10,7 +10,7 @@ const config = {
     messagingSenderId: "185395640105",
     appId: "1:185395640105:web:cb3897d0fc6c6e6c852938"
 }
-const app = initializeApp(config);
-const realDb = getDatabase(app);
-const auth = getAuth(app)
-export { realDb, auth }
+const app = initializeApp(config); // firebase'i çalıştıran fonksiyon
+const realDb = getDatabase(app); // veri tabanına verileri çek
+const auth = getAuth(app) // kullanıcı işlemlerinde kullanılır
+export { realDb, auth } // bu değişkenleri dışarıya çıkarır

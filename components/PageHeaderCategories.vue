@@ -32,14 +32,14 @@ export default {
                 </div>
                 <ul class="nav navbar-nav">
                   <li class="dropdown" @mouseleave="dropdown_close">
-                    <!-- Başaramadık -->
+                    
                     <a
                       class="nav-first-link"
                       href="/cep-telefonu-modelleri/"
                       @mouseover="dropdown_open"
                       >Telefon</a
                     >
-                    <!-- Böyle oldu en fazla -->
+                    
                     <div class="dropdown-menu">
                       <div class="row">
                         <div class="menu-wrapper col-lg-9">

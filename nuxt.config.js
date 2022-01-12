@@ -31,7 +31,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     "@/plugins/swiper.js",
-    '~/plugins/firebase.js'
+    '~/plugins/firebase.js' // firebase'in ilk defa çalışmasıyla birlikte çalışma durumunda
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

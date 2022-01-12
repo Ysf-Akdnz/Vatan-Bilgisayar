@@ -7,7 +7,7 @@ import { realDb, auth } from '../plugins/firebase.js';
 export const state = () => ({
   users: {},
   products: [],
-  inCart: [],  // veritabında tutulacak veritabanı modeli
+  inCart: [],  // veritabanında tutulacak veritabanı modeli
   cartProducts: [  // sepetimde görünecek arayüz verileri
     {
       product: {},
@@ -30,19 +30,19 @@ export const getters = {
 }
 export const actions = {
   fetchproducts({ commit, dispatch }) {
-    const starCountRef = ref(realDb, 'products');
-    onValue(starCountRef, (snapshot) => {
+    const realDBRef = ref(realDb, 'products');
+    onValue(realDBRef, (snapshot) => {
       const data = snapshot.val();
       commit('setproducts', data)
     });
   },
-  fetchCart({ commit, dispatch }) {
+  fetchCart({ commit, dispatch }) { // sepetime eklenen ürünlerin verilerini sepetimde görüntülenmesini sağlıyor.
     onAuthStateChanged(auth, (user) => {
       let arr = []
       if (user) {
         const cartref = ref(realDb, "users/" + user.uid + "/inCart")
         onValue(cartref, (snapshot) => {
-          if (snapshot.val() != null) { // dictionary tipinde gelen bir veriyi arraya gönüştürür ve key'de dictionary key'lerinde array'in elemanlarına ekler.
+          if (snapshot.val() != null) { // dictionary tipinde gelen bir veriyi arraya dönüştürür ve key'de dictionary key'lerinde array'in elemanlarına ekler.
             arr = Object.entries(snapshot.val()).map(e => Object.assign(e[1], { key: e[0] }))
           }
           commit('setInCart', arr)
@@ -53,11 +53,18 @@ export const actions = {
       }
     });
   },
-  addToCart({ commit, dispatch }, payload) {  // ürünü sepete ekler
+  addToCart({ commit, dispatch, state }, payload) {  // ürünü sepete ekler
     onAuthStateChanged(auth, (user) => {
+      const finditem = state.inCart.find(item => item.pid === payload.pid)
       if (user) {
-        const cartref = ref(realDb, "users/" + user.uid + "/inCart")
-        push(cartref, payload) // payload = sepet ürünü 
+        if (finditem) {
+          const reference = ref(realDb, "users/" * user.uid + "/inCart/" + finditem.key + "/count")
+          set(reference, finditem.count + 1)
+        }
+        else {
+          const cartref = ref(realDb, "users/" + user.uid + "/inCart") // yolu(link)
+          push(cartref, payload) // payload = sepet ürünü 
+        }
       }
       else {
         commit('addToCart', payload)
@@ -79,7 +86,7 @@ export const actions = {
     dispatch('fetchCart')
   },
   changeCountCart({ dispatch, commit, state }, idCount) { // sepetimdeki ürünün adedini günceller
-    const item = state.inCart.find(inCart => inCart.id === idCount.id)
+    const item = state.inCart.find(item => item.pid === idCount.id)
     const nextCount = idCount.count + item.count
     const nCount = nextCount >= 1 ? nextCount : 1
 
@@ -108,7 +115,7 @@ export const actions = {
     });
     dispatch('fetchCart')
   },
-  register({ commit }, payload) {  
+  register({ commit }, payload) {
     createUserWithEmailAndPassword(auth, payload.email, payload.password)
       .then((userCredential) => {
         alert("Hesap" + payload.email + "başarılı bir şekilde oluşturuldu!")
@@ -163,9 +170,9 @@ export const mutations = {
   setInCart(state, array) {
     state.inCart = array
     state.cartProducts = []
-    state.inCart.forEach(element => { // inCart'ın içersindeki ürünler yardımıyla yani pid'si ile ürünü buluyoruz
+    state.inCart.forEach(element => { // inCart'ın içersindeki ürünler yardımıyla yani pid'si(ürün id'isi) ile ürünü buluyoruz
       const product = state.products.find(item => item.code === element.pid) // sonra cartProducts'ın içini dolduruyoruz
-      const cartProduct = {  // bu cartProductsı daha sonra arayüzde kullanıyoruz 
+      const cartProduct = {  // bu cartProducts'ı daha sonra arayüzde kullanıyoruz 
         product,
         count: element.count,
         id: element.id

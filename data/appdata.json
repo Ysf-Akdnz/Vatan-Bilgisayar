@@ -14,21 +14,21 @@
     "products": [
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/113155_small.jpg",
-            "cost": 7.999,
+            "cost": 7999,
             "currency": "TL",
             "code": "MHDA3TU/A",
             "name": "iPhone 11 64 Gb Siyah"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/lenovo/thumb/TeoriV2-106781_small.jpg",
-            "cost": 7.499,
+            "cost": 7499,
             "currency": "TL",
             "code": "81WB0062TX",
             "name": "LENOVO IDEAPAD 3 CORE İ5 10210U 1.6GHZ-8GB-512GBSSD-15.6'-MX130 2GB-W10"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/lg/thumb/up77-1_small.jpg",
-            "cost": 6.799,
+            "cost": 6799,
             "currency": "TL",
             "code": "50UP77006LB",
             "name": "LG 50UP77006 50' 127 CM 4K UHD webOS SMART TV,DAHİLİ UYDU ALICI"
@@ -42,21 +42,21 @@
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/realme/thumb/128100-anaa_small.jpg",
-            "cost": 2.399,
+            "cost": 2399,
             "currency": "TL",
             "code": "C21_SİYAH_4_64",
             "name": "Realme C21 4 Gb Ram 64 Gb Akıllı Telefon Siyah"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/huawei/thumb/120475_small.jpg",
-            "cost": 8.999,
+            "cost": 8999,
             "currency": "TL",
             "code": "MATEBOOKD16/16/512",
             "name": "HUAWEI MATEBOOK D 16 AMD RYZEN 5 4600H 3GHZ-16GB-512GBSSD-16.1'-AMD-W10"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/128882_small.jpg",
-            "cost": 8.499,
+            "cost": 8499,
             "currency": "TL",
             "code": "UE55AU8000UXTK",
             "name": "SAMSUNG UE 55AU8000 55' 138 CM 4K UHD SMART TV,DAHİLİ UYDU ALICI"
@@ -70,7 +70,7 @@
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/xiaomi/thumb/130633-1_small.jpg",
-            "cost": 4.499,
+            "cost": 4499,
             "currency": "TL",
             "code": "POCOX3-PR-256_BLACK",
             "name": "Xiaomi Poco X3 Pro 256 Gb Akıllı Telefon Siyah"
@@ -84,14 +84,14 @@
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/hp/thumb/130117-4_small.jpg",
-            "cost": 5.599,
+            "cost": 5599,
             "currency": "TL",
             "code": "2Z9T4EA",
             "name": "HP 2Z9T4EA INTEL CORE İ3 10100T 3 GHZ 4 GB 256 GB SSD INTEL UHD 630 WIN10 21.5''"
         },
         {
             "img_url": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/129944_small.jpg",
-            "cost": 3.399,
+            "cost": 3399,
             "currency": "TL",
             "code": "MKQ63TU/A",
             "name": "Apple Watch SE GPS, 44mm Space Grey Aluminium Case with Midnight Sport Band"
