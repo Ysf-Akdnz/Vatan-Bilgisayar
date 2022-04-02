@@ -47,6 +47,3 @@ describe("Kategori isimlerinin gözüküyor mu?", () => {
         expect(wrapper.vm).toBeTruthy()
     })
 });
-test('console.log', () => {
-    console.log(PageHeaderCategories)
-})

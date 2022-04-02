@@ -14,7 +14,4 @@ describe("Footer Komponentinin Düzgün Çalışıp Çalışmamasının denetlen
         const wrapper = mount(PageFooter)
         expect(wrapper.vm).toBeTruthy()
     })
-    test('console.log', () => {
-        console.log(PageFooter)
-    })
 });

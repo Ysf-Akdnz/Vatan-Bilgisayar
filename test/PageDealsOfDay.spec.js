@@ -57,7 +57,4 @@ describe("Verilen ürünlerin listelenmesi", () => {
             expect(wrapper.text()).toContain("3299");
         });
     });
-    test('console.log', () => {
-        console.log(ProductList)
-    })
 })

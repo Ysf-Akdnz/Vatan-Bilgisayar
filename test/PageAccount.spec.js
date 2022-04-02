@@ -49,8 +49,6 @@ describe('PageAccount', () => {
             const wrapper = mount(PageAccount)
             expect(wrapper.vm).toBeTruthy()
         })
-        test('console.log', () => {
-            console.log(PageAccount)
-        })
+        
     })
 })
